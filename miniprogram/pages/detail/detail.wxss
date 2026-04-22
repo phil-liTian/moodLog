@@ -1,0 +1,15 @@
+.page { min-height: 100vh; background: #F8FAFC; }
+.header { background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%); padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+.mood-emoji { font-size: 64px; margin-bottom: 12px; }
+.mood-name { font-size: 24px; font-weight: 600; color: #fff; }
+.mood-date { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 8px; }
+.mood-score { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+.content-section, .tags-section { background: #fff; margin: 20px; border-radius: 16px; padding: 20px; }
+.section-title { font-size: 14px; color: #94A3B8; margin-bottom: 12px; }
+.content-text { font-size: 15px; color: #1E293B; line-height: 1.6; }
+.tags-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { padding: 6px 14px; background: #F3E8FF; border-radius: 16px; font-size: 13px; color: #7C3AED; }
+.actions { display: flex; gap: 12px; padding: 20px; }
+.action-btn { flex: 1; height: 44px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.action-btn.edit { background: #8B5CF6; color: #fff; }
+.action-btn.delete { background: #fff; border: 1px solid #FF6B6B; color: #FF6B6B; }

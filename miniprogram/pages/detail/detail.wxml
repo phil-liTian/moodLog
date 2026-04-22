@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="header">
+    <view class="mood-emoji">{{record.emoji}}</view>
+    <view class="mood-name">{{record.moodName}}</view>
+    <view class="mood-date">{{record.dateText}}</view>
+    <view class="mood-score">心情指数: {{record.moodScore}}</view>
+  </view>
+  <view class="content-section" wx:if="{{record.content}}">
+    <view class="section-title">今日感悟</view>
+    <text class="content-text">{{record.content}}</text>
+  </view>
+  <view class="tags-section" wx:if="{{record.tags.length > 0}}">
+    <view class="section-title">标签</view>
+    <view class="tags-list">
+      <text class="tag" wx:for="{{record.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+  <view class="actions">
+    <view class="action-btn edit" bindtap="editRecord"><text>编辑</text></view>
+    <view class="action-btn delete" bindtap="deleteRecord"><text>删除</text></view>
+  </view>
+</view>

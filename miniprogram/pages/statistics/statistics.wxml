@@ -1,0 +1,108 @@
+<!--统计页面-->
+<view class="page">
+  <!-- 月份切换 -->
+  <view class="month-header">
+    <view class="month-btn" bindtap="prevMonth">
+      <text>‹</text>
+    </view>
+    <view class="month-display">
+      <text class="month-text">{{currentYear}}年{{currentMonth}}月</text>
+    </view>
+    <view class="month-btn {{isCurrentMonth ? 'disabled' : ''}}" bindtap="nextMonth">
+      <text>›</text>
+    </view>
+  </view>
+
+  <!-- 统计卡片 -->
+  <view class="stats-cards">
+    <view class="stat-card">
+      <text class="stat-icon">📊</text>
+      <text class="stat-value">{{stats.totalRecords}}</text>
+      <text class="stat-label">记录天数</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-icon">💫</text>
+      <text class="stat-value">{{stats.avgMoodScore}}</text>
+      <text class="stat-label">平均心情</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-icon">{{topMoodEmoji}}</text>
+      <text class="stat-value">{{topMoodName}}</text>
+      <text class="stat-label">最常心情</text>
+    </view>
+  </view>
+
+  <!-- 心情趋势图 -->
+  <view class="section">
+    <view class="section-title">心情趋势</view>
+    <view class="trend-chart">
+      <view class="chart-bars">
+        <view 
+          class="chart-bar"
+          wx:for="{{trendData}}"
+          wx:key="date"
+          style="height: {{item.score}}%; background: {{item.color}}"
+        >
+          <view class="bar-tooltip">{{item.score}}</view>
+        </view>
+      </view>
+      <view class="chart-labels">
+        <text wx:for="{{trendLabels}}" wx:key="*this">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 心情分布 -->
+  <view class="section">
+    <view class="section-title">心情分布</view>
+    <view class="distribution-list">
+      <view class="distribution-item" wx:for="{{distributionData}}" wx:key="type">
+        <view class="dist-left">
+          <text class="dist-emoji">{{item.emoji}}</text>
+          <text class="dist-name">{{item.name}}</text>
+        </view>
+        <view class="dist-right">
+          <view class="dist-bar-wrapper">
+            <view class="dist-bar" style="width: {{item.percent}}%; background: {{item.color}}"></view>
+          </view>
+          <text class="dist-percent">{{item.percent}}%</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关键词云 -->
+  <view class="section" wx:if="{{stats.topTags.length > 0}}">
+    <view class="section-title">本月关键词</view>
+    <view class="keywords-cloud">
+      <view 
+        class="keyword-item"
+        wx:for="{{stats.topTags}}"
+        wx:key="tag"
+        style="font-size: {{14 + item.weight / 8}}px; color: {{keywordColors[index % 5]}}"
+      >{{item.tag}}</view>
+    </view>
+  </view>
+
+  <!-- AI洞察 -->
+  <view class="section ai-section" bindtap="goToAIReport">
+    <view class="ai-header">
+      <text class="ai-icon">🤖</text>
+      <text class="ai-title">AI 月度洞察</text>
+      <text class="ai-arrow">›</text>
+    </view>
+    <view class="ai-preview" wx:if="{{aiSummary}}">
+      <text class="ai-overview">{{aiSummary.overview}}</text>
+    </view>
+    <view class="ai-preview" wx:else>
+      <text class="ai-hint">点击生成 AI 总结</text>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{stats.totalRecords === 0}}">
+    <text class="empty-icon">📈</text>
+    <text class="empty-text">本月还没有记录</text>
+    <text class="empty-hint">开始记录心情，查看月度统计</text>
+  </view>
+</view>

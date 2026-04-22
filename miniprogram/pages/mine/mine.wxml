@@ -1,0 +1,77 @@
+<!--我的页面-->
+<view class="page">
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <view class="user-avatar">{{isLoggedIn ? '👤' : '👻'}}</view>
+    <view class="user-info">
+      <text class="user-name">{{isLoggedIn ? userInfo.nickname : '游客'}}</text>
+      <text class="user-status">{{isLoggedIn ? '已登录' : '未登录 · 数据仅本地保存'}}</text>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="goToLogin">
+      <view class="menu-left">
+        <text class="menu-icon">📊</text>
+        <text class="menu-text">历史数据</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+
+    <view class="menu-item" bindtap="toggleAI">
+      <view class="menu-left">
+        <text class="menu-icon">🤖</text>
+        <text class="menu-text">AI 月度总结</text>
+      </view>
+      <switch checked="{{settings.aiAnalysisEnabled}}" color="#8B5CF6" />
+    </view>
+
+    <view class="menu-item" bindtap="goToSettings">
+      <view class="menu-left">
+        <text class="menu-icon">🔒</text>
+        <text class="menu-text">隐私设置</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+
+    <view class="menu-item" bindtap="exportData">
+      <view class="menu-left">
+        <text class="menu-icon">📤</text>
+        <text class="menu-text">导出数据</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+
+    <view class="menu-item" bindtap="clearData">
+      <view class="menu-left">
+        <text class="menu-icon">🗑️</text>
+        <text class="menu-text">清空数据</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+
+    <view class="menu-item" bindtap="goToAbout">
+      <view class="menu-left">
+        <text class="menu-icon">ℹ️</text>
+        <text class="menu-text">关于</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 登录按钮 -->
+  <view class="login-btn" bindtap="goToLogin" wx:if="{{!isLoggedIn}}">
+    <text>登录 / 注册</text>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-btn" bindtap="logout" wx:if="{{isLoggedIn}}">
+    <text>退出登录</text>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="version">
+    <text>心情日记 v1.0.0</text>
+  </view>
+</view>

@@ -1,0 +1,292 @@
+/* 统计页面样式 */
+.page {
+  min-height: 100vh;
+  background: #F8FAFC;
+  padding-bottom: 100px;
+}
+
+/* 月份切换 */
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+}
+
+.month-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+.month-btn.disabled {
+  opacity: 0.3;
+}
+
+.month-display {
+  flex: 1;
+  text-align: center;
+}
+
+.month-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 统计卡片 */
+.stats-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  margin-top: -30px;
+}
+
+.stat-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 0 6px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #8B5CF6;
+  display: block;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #94A3B8;
+  margin-top: 4px;
+}
+
+/* 区块 */
+.section {
+  background: #fff;
+  margin: 12px 20px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 16px;
+}
+
+/* 趋势图 */
+.trend-chart {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-bars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding-bottom: 8px;
+}
+
+.chart-bar {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:active .bar-tooltip {
+  opacity: 1;
+}
+
+.bar-tooltip {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1E293B;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.chart-labels text {
+  font-size: 10px;
+  color: #94A3B8;
+}
+
+/* 心情分布 */
+.distribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.distribution-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dist-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 80px;
+}
+
+.dist-emoji {
+  font-size: 20px;
+}
+
+.dist-name {
+  font-size: 14px;
+  color: #64748B;
+}
+
+.dist-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dist-bar-wrapper {
+  flex: 1;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dist-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.dist-percent {
+  font-size: 12px;
+  color: #94A3B8;
+  width: 36px;
+  text-align: right;
+}
+
+/* 关键词云 */
+.keywords-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.keyword-item {
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #F3E8FF 0%, #EDE9FE 100%);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* AI洞察 */
+.ai-section {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ai-icon {
+  font-size: 20px;
+}
+
+.ai-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ai-arrow {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ai-preview {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.ai-overview {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.ai-hint {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.empty-hint {
+  font-size: 14px;
+  color: #94A3B8;
+  margin-top: 8px;
+}

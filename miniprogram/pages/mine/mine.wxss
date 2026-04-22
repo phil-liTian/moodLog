@@ -1,0 +1,113 @@
+/* 我的页面样式 */
+.page {
+  min-height: 100vh;
+  background: #F8FAFC;
+}
+
+.user-card {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-status {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+.menu-list {
+  background: #fff;
+  margin: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  font-size: 20px;
+}
+
+.menu-text {
+  font-size: 15px;
+  color: #1E293B;
+}
+
+.menu-arrow {
+  font-size: 18px;
+  color: #CBD5E1;
+}
+
+.login-btn {
+  margin: 20px;
+  height: 50px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logout-btn {
+  margin: 20px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #64748B;
+}
+
+.version {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #94A3B8;
+}

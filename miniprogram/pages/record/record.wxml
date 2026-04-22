@@ -1,0 +1,62 @@
+<!--记录页面-->
+<view class="page">
+  <!-- 日期显示 -->
+  <view class="date-header">
+    <text class="date-text">{{dateText}}</text>
+    <text class="weekday-text">{{weekdayText}}</text>
+  </view>
+
+  <!-- 心情选择 -->
+  <view class="section">
+    <view class="section-title">今天心情怎么样？</view>
+    <view class="mood-grid">
+      <view 
+        class="mood-item {{selectedMood === item.type ? 'active' : ''}}"
+        wx:for="{{moodList}}"
+        wx:key="type"
+        data-mood="{{item.type}}"
+        bindtap="selectMood"
+        style="{{selectedMood === item.type ? 'background:' + item.color + '20; border-color:' + item.color : ''}}"
+      >
+        <text class="mood-emoji">{{item.emoji}}</text>
+        <text class="mood-name" style="{{selectedMood === item.type ? 'color:' + item.color : ''}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 感悟输入 -->
+  <view class="section">
+    <view class="section-title">今天有什么想说的？</view>
+    <view class="content-input-wrapper">
+      <textarea 
+        class="content-input"
+        placeholder="记录今天的感悟..."
+        maxlength="200"
+        bindinput="onContentInput"
+        value="{{content}}"
+      ></textarea>
+      <text class="word-count">{{content.length}}/200</text>
+    </view>
+  </view>
+
+  <!-- 标签选择 -->
+  <view class="section">
+    <view class="section-title">添加标签（可选）</view>
+    <view class="tag-list">
+      <view 
+        class="tag-item {{selectedTags.indexOf(item) > -1 ? 'active' : ''}}"
+        wx:for="{{tagList}}"
+        wx:key="*this"
+        data-tag="{{item}}"
+        bindtap="toggleTag"
+      >{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="bottom-bar">
+    <view class="btn-save {{canSave ? '' : 'disabled'}}" bindtap="saveRecord">
+      <text>保存记录</text>
+    </view>
+  </view>
+</view>
