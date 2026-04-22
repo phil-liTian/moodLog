@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="header">
+    <text class="month-label">{{year}}年{{month}}月</text>
+    <text class="header-title">AI 心情洞察报告</text>
+  </view>
+  <view class="score-card">
+    <view class="score-circle">
+      <text class="score-value">{{stats.avgMoodScore}}</text>
+      <text class="score-label">平均分</text>
+    </view>
+    <view class="score-info">
+      <view class="score-item"><text class="score-item-label">最常心情</text><text class="score-item-value">{{topMoodEmoji}} {{topMoodName}}</text></view>
+      <view class="score-item"><text class="score-item-label">记录天数</text><text class="score-item-value">{{stats.totalRecords}} 天</text></view>
+      <view class="score-item"><text class="score-item-label">心情趋势</text><text class="score-item-value trend">{{moodTrend}}</text></view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-title">整体概况</view>
+    <text class="overview-text">{{summary.overview}}</text>
+  </view>
+  <view class="section" wx:if="{{summary.highlights.length > 0}}">
+    <view class="section-title">亮点时刻</view>
+    <view class="highlight-list">
+      <view class="highlight-item" wx:for="{{summary.highlights}}" wx:key="*this"><text class="highlight-icon">✨</text><text class="highlight-text">{{item}}</text></view>
+    </view>
+  </view>
+  <view class="section" wx:if="{{summary.concerns.length > 0}}">
+    <view class="section-title">需要关注</view>
+    <view class="concern-list">
+      <view class="concern-item" wx:for="{{summary.concerns}}" wx:key="*this"><text class="concern-icon">💭</text><text class="concern-text">{{item}}</text></view>
+    </view>
+  </view>
+  <view class="section" wx:if="{{summary.suggestions.length > 0}}">
+    <view class="section-title">建议</view>
+    <view class="suggestion-list">
+      <view class="suggestion-item" wx:for="{{summary.suggestions}}" wx:key="*this"><text class="suggestion-icon">💡</text><text class="suggestion-text">{{item}}</text></view>
+    </view>
+  </view>
+</view>

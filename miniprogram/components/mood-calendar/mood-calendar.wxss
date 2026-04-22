@@ -1,0 +1,10 @@
+.calendar { margin-top: 12px; }
+.weekdays { display: flex; margin-bottom: 8px; }
+.weekdays text { flex: 1; text-align: center; font-size: 12px; color: #94A3B8; }
+.days { display: flex; flex-wrap: wrap; }
+.day { width: 14.28%; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; transition: background 0.2s; }
+.day.other-month { opacity: 0.3; }
+.day.has-mood { background: #F8FAFC; }
+.day:active { background: #EDE9FE; }
+.day-text { font-size: 13px; color: #64748B; }
+.day-mood { font-size: 16px; margin-top: 2px; }

@@ -1,0 +1,17 @@
+<view class="calendar">
+  <view class="weekdays">
+    <text wx:for="{{weekdays}}" wx:key="*this">{{item}}</text>
+  </view>
+  <view class="days">
+    <view 
+      class="day {{item.isCurrentMonth ? '' : 'other-month'}} {{item.mood ? 'has-mood' : ''}}"
+      wx:for="{{calendar}}"
+      wx:key="date"
+      data-date="{{item.date}}"
+      bindtap="onDayClick"
+    >
+      <text class="day-text">{{item.day}}</text>
+      <text class="day-mood" wx:if="{{item.mood}}">{{item.moodEmoji}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+.page { min-height: 100vh; background: #F8FAFC; padding-bottom: 40px; }
+.header { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); padding: 40px 20px; text-align: center; }
+.month-label { font-size: 14px; color: rgba(255,255,255,0.7); }
+.header-title { display: block; font-size: 22px; font-weight: 600; color: #fff; margin-top: 8px; }
+.score-card { background: #fff; margin: -30px 20px 20px; border-radius: 20px; padding: 24px; display: flex; align-items: center; gap: 24px; box-shadow: 0 4px 20px rgba(139,92,246,0.15); }
+.score-circle { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-value { font-size: 32px; font-weight: 700; color: #fff; }
+.score-label { font-size: 12px; color: rgba(255,255,255,0.8); }
+.score-info { flex: 1; }
+.score-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #F1F5F9; }
+.score-item:last-child { border-bottom: none; }
+.score-item-label { font-size: 14px; color: #64748B; }
+.score-item-value { font-size: 14px; font-weight: 500; color: #1E293B; }
+.score-item-value.trend { color: #8B5CF6; }
+.section { background: #fff; margin: 0 20px 16px; border-radius: 16px; padding: 20px; }
+.section-title { font-size: 16px; font-weight: 600; color: #1E293B; margin-bottom: 16px; }
+.overview-text { font-size: 15px; color: #64748B; line-height: 1.6; }
+.highlight-item, .concern-item, .suggestion-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; }
+.highlight-icon, .concern-icon, .suggestion-icon { font-size: 16px; }
+.highlight-text, .concern-text, .suggestion-text { flex: 1; font-size: 14px; color: #64748B; line-height: 1.5; }
